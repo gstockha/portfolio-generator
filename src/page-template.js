@@ -18,8 +18,8 @@ const generateProjects = projectsArr => {
       <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr
-        .filter(({ feature }) => feature) //if feature return true, else return false
-        .map(({ name, description, languages, link }) => { //returns new array with those properties of old array
+        .filter(({ feature }) => feature) //makes a new array containing objects with feature = true
+        .map(({ name, description, languages, link }) => { //iterates through new array, creating new array for each one with those obj params
           return `
           <div class="col-12 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
@@ -31,7 +31,7 @@ const generateProjects = projectsArr => {
             <a href="${link}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
           </div>
         `;
-        })
+        }) //then join comes and takes new mapped array and removes the commas from them
         .join('')}
 
       ${projectsArr
