@@ -18,8 +18,8 @@ const generateProjects = projectsArr => {
       <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr
-        .filter(({ feature }) => feature)
-        .map(({ name, description, languages, link }) => {
+        .filter(({ feature }) => feature) //if feature return true, else return false
+        .map(({ name, description, languages, link }) => { //returns new array with those properties of old array
           return `
           <div class="col-12 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
